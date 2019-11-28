@@ -13,7 +13,7 @@ __init__()​ ), который должен принимать данные (с
 строки первой матрицы складываем с первым элементом первой строки второй матрицы и т.д
 '''
 
-my_list1 = [[31, 22], [37, 43], [51, 86]]
+my_list1 = [[1, 2], [3, 4], [5, 6]]
 my_list2 = [[10, 122], [27, 13], [31, 88]]
 
 
@@ -31,21 +31,21 @@ class Matrix:
         return res
 
     def __add__(self, other):
-        res = ''
+        res = []
         x = len(self.arr)
         y = len(self.arr[0])
 
         for els in range(x):
-            el_str = ''
+            el_str = []
             for el in range(y):
                 summ = self.arr[els][el] + other.arr[els][el]
-                el_str += str(summ) + ' '
-            res += el_str + '\n'
-        return (res)
+                el_str.append(summ)
+            res.append(el_str)
+        return Matrix(res)
 
 
 m_1 = Matrix(my_list1)
 m_2 = Matrix(my_list2)
 print(m_1)
 print(m_2)
-print(m_1 + m_2)
+print(m_1 + m_1)
