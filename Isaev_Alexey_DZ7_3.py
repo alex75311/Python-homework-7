@@ -36,7 +36,7 @@ class Cell:
 
     def __sub__(self, other):
         res = self.counts - other.counts
-        return res if res >= 0 else 'Невозможно провести вычитание'
+        return Cell(res) if res >= 0 else 'Невозможно провести вычитание'
 
     def __mul__(self, other):
         return Cell(self.counts * other.counts)
@@ -57,9 +57,9 @@ class Cell:
 
 a = Cell(5)
 b = Cell(32)
-print(a + b, type(a + b))
-print(b - a, type(b - a))
-print(a - b, type(a - b))
-print(a * b, type(a * b))
-print(b / a, type(b / a))
-print(b.make_order(5), type(b.make_order(5)))
+print(a + b)
+print(b - a)
+print(a - b)
+print(a * b)
+print(b / a)
+print(b.make_order(5))

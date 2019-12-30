@@ -43,9 +43,23 @@ class Matrix:
             res.append(el_str)
         return Matrix(res)
 
+    def __sub__(self, other):
+        res = []
+        x = len(self.arr)
+        y = len(self.arr[0])
+
+        for els in range(x):
+            el_str = []
+            for el in range(y):
+                razn = self.arr[els][el] - other.arr[els][el]
+                el_str.append(razn)
+            res.append(el_str)
+        return Matrix(res)
+
 
 m_1 = Matrix(my_list1)
 m_2 = Matrix(my_list2)
 print(m_1)
 print(m_2)
-print(m_1 + m_1)
+print(m_1 + m_2)
+print(m_2 - m_1)
